@@ -1,0 +1,43 @@
+@media (max-width: 800px) {
+    .logo{
+        display: block;
+    }
+    .secundary-button{
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 24px;
+    }
+
+    .bot-ton{
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 24px;
+    }
+
+    /*
+    .cards-container{
+        grid-template-columns: repeat(auto-fill, var(--cardmo-size));
+    }
+
+    .product-card{
+        width: var(--cardmo-size);
+    }
+
+    .product-card{
+        width: var(--cardmo-size);
+        height: var(--cardmo-size);
+    }
+    */
+    
+    .menu{
+        display: block;
+    }
+    .navbar-left ul{
+        display: none;
+    }
+    .navbar-email{
+        display: none;
+    }
+}
