@@ -1,3 +1,4 @@
+/*-----General-settings-----*/
 :root{
     --white: #ffffff;
     --black: #000000;
@@ -13,21 +14,18 @@
 html{
     font-size: 62.5%;
 }
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body{
     font-family: 'Quicksand', sans-serif;
 }
-
 .inactive{
     display: none;
 }
-
+/*---------------------*/
 
 .login{
     width: 100%;
@@ -452,4 +450,40 @@ nav{
     text-decoration: none;
     margin-bottom: 20px;
     display: inline-block;
+  }
+
+  /*-----mobile-menu-----*/
+  .menu{
+    cursor: pointer;
+  }
+  .mobile-menu {
+    position: absolute;
+    background-color: var(--white);
+    top: 44px;
+    padding: 60px;
+  }
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    /* margin-bottom: 24px; */
+  }
+  .mobile-menu ul {
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+  }
+  .mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--very-light-pink);
+  }
+  .mobile-menu ul li {
+    margin-bottom: 24px;
+  }
+  .email {
+    font-size: var(--sm);
+    font-weight: 300 !important;
+  }
+  .sign-out {
+    font-size: var(--sm);
+    color: var(--hospital-green) !important;
   }
