@@ -1,3 +1,3 @@
 # YardSale
-Trying to make a fake-clothing page with HTML, CSS and JS
-
+Trying to make a fake-clothing page with HTML, CSS and JS. 
+Visti (work in progress) here: [Second-Hand](http://www.secondhand.com/)
