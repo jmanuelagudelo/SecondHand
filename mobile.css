@@ -78,6 +78,10 @@
         color: var(--hospital-green) !important;
     }
 
+    /*-----product detail-----*/
 
+    .product-detail{
+        width: 100%;
+    }
 
 }

@@ -2,7 +2,7 @@
 :root{
     --white: #ffffff;
     --black: #000000;
-    --very-light-pink: #c7c7c7;
+    --very-light-pink: #f85b11;
     --text-input-field: #f7f7f7;
     --hospital-green: #649538;
     --sm: 14px;
@@ -58,6 +58,7 @@ body{
     margin-bottom: 12px;
     text-align: center;
 }
+
 .tittle-acc{
     text-align: start;
     margin-bottom: 30px;
@@ -122,7 +123,7 @@ form a{
 }
 .primary-button{
     background-color: var(--hospital-green);
-    border-radius: 8px;
+    border-radius: 20px;
     border: none;
     color: var(--text-input-field);
     width: 100%;
@@ -130,7 +131,6 @@ form a{
     font-size: var(--md);
     font-weight: bold;
     height: 5rem;
-    padding-top: 1.2rem;
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
 }
@@ -233,16 +233,19 @@ form a{
     font-size: var(--lg);
     margin-top: 20px;
     margin-bottom: 40px;
-
 }
 .my-order-container{
     display: grid;
     grid-template-columns: auto 1fr auto;
     width: 300px;
+    
 }
 .my-order-content{
     display: flex;
     flex-direction: column;
+    padding-top: 18px;
+    background-color: var(--white);
+    border-radius: 0px 0px 20px 20px ;
 }
 .order{
     display: grid;
@@ -254,6 +257,22 @@ form a{
     border-radius: 8px;
     padding: 0 24px;
 }
+.tittle-div{
+    background-color: var(--white);
+}
+.tittle-div p{
+    text-align: center;
+    font-size: var(--lg);
+    font-weight: bold;
+}
+.title-container{
+    display: flex;
+}
+
+.title-container img {
+    transform: rotate(180deg);
+    margin-right: 14px;
+  }
 .order p:nth-child(1){
     display: flex;
     flex-direction: column;
@@ -270,7 +289,9 @@ form a{
     text-align: end;
     font-weight: bold;
 }
-
+.navbar-shopping-cart{
+    cursor: pointer;
+}
 .shopping-cart{
     display: grid;
     grid-template-columns: auto 1fr auto auto;
