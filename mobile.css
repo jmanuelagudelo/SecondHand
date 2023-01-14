@@ -2,6 +2,9 @@
     .logo{
         display: block;
     }
+    .logo-nav{
+        width: 120px;
+    }
     .secundary-button{
         width: 300px;
         position: absolute;
@@ -17,7 +20,7 @@
     }
 
     /*
-    .cards-container{
+    .cards-container{ 
         grid-template-columns: repeat(auto-fill, var(--cardmo-size));
     }
 
