@@ -315,7 +315,9 @@ form a{
     font-weight: bold;
 }
 /*----------nav-bar-----------*/
-
+.main-nav{
+    border-bottom: #f85b11 2px solid;
+}
 .menu{
    display: none; 
 }
@@ -349,12 +351,15 @@ nav{
     border: 1px solid var(--white);
     padding: 8px;
     border-radius: 8px;
+    font-size: var(--lg);
 }
 .navbar-left ul li a:hover, .navbar-right ul li a:hover{
     color: var(--hospital-green);
     border: 1px solid var(--hospital-green);
 }
-
+.navbar-right{
+    padding-top: 25px;
+}
 .navbar-email{
     color: var(--very-light-pink);
     font-size: var(--sm);
@@ -442,12 +447,12 @@ nav{
 /*---------Desktop-menu---------*/
 .desktop-menu {
     position: absolute;
-    top: 44px;
+    top: 88px;
     right: 60px;
     background-color: var(--white);
     width: 100px;
     height: auto;
-    border: 1px solid var(--very-light-pink);
+    border: 2px solid var(--very-light-pink);
     border-radius: 6px;
     padding: 20px 20px 0 20px;
   }

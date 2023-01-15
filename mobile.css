@@ -49,8 +49,9 @@
     .mobile-menu {
         position: absolute;
         background-color: var(--white);
-        top: 44px;
-        padding: 60px;
+        top: 90px;
+        left: 0;
+        padding: 0px 80px 20px 20px;
     }
     .mobile-menu a {
         text-decoration: none;

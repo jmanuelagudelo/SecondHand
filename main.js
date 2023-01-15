@@ -11,10 +11,10 @@ menuEmail.addEventListener('click', toggleDesktoMenu);
 MenuHamIcon.addEventListener('click', toggleMobileMenu);
 ShoppingCart.addEventListener('click', toggleShopping);
 
-/*---------Reto, dar click en cualquier lugar cierra todos los menus
+/*---------Reto, dar click en cualquier lugar cierra todos los menus */
 
 const mainContainer = document.querySelector('.main-container');
-mainContainer,addEventListener('click', CloseAllMain);
+mainContainer.addEventListener('click', CloseAllMain);
 
 
 function CloseAllMain(){
@@ -22,13 +22,17 @@ function CloseAllMain(){
     const mobileMenuClose = mobileMenu.classList.contains('inactive');
     const DesktopMenuClose = DesktopMenu.classList.contains('inactive');
 
-    if(!asideClose || !mobileMenuClose || !DesktopMenuClose){
+    if(!asideClose){
         aside.classList.toggle('inactive');
+    }
+    if(!mobileMenuClose){
         mobileMenu.classList.toggle('inactive');
+    }
+    if(!DesktopMenuClose){
         DesktopMenu.classList.toggle('inactive');
     }
 }
-*/
+
 //--funciones--menus-----//
 
 function toggleDesktoMenu(){
@@ -45,6 +49,9 @@ function toggleDesktoMenu(){
 function toggleMobileMenu(){
     const asideClose = aside.classList.contains('inactive');
 
+    if(!asideClose){
+        aside.classList.add('inactive')
+    }
     mobileMenu.classList.toggle('inactive');
 }
 
