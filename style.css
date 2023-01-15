@@ -159,6 +159,7 @@ form a{
     grid-template-columns: repeat(auto-fill, var(--card-size));
     gap: 26px;
     place-content: center;
+    margin-top: 30px;
 }
 .product-card{
     width: var(--card-size);
