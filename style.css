@@ -154,6 +154,7 @@ form a{
     justify-content: center;
 }
 
+/*--------Productos------------*/
 .cards-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--card-size));
@@ -171,10 +172,10 @@ form a{
     object-fit: cover;
 }
 .product-info{
-    display: flex;
+    display: flex !important; 
     justify-content: space-between;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 12px !important;
 }
 .product-info figure{
     margin: 0;
@@ -186,11 +187,13 @@ form a{
 .product-info div p:nth-child(1){
     font-weight: bold;
     font-size: var(--md);
+    margin-top: 0;
     margin-bottom: 4px;
 }
 .product-info div p:nth-child(2){
     font-size: var(--sm);
-    margin: 0 0;
+    margin-top: 0;
+    margin-bottom: 0;
     color: var(--very-light-pink);
 }
 /* ----------------------*/
