@@ -100,7 +100,7 @@
 
     </nav>
 
-    <aside class="product-detail inactive">
+    <aside id="shoppingCartContainer" class="inactive">
         <div class="title-container tittle-div">
           <img src="./sources/icons/flechita.svg" alt="arrow">
           <p class="title">My order</p>
@@ -138,6 +138,22 @@
           </button>
         </div>
       </div>
+    </aside>
+
+    <aside id="productDetail" class="inactive mobileDetail">
+        <div class="product-detail-close">
+            <img src="./sources/icons/icon_close.png" alt="close">
+        </div>
+        <img src="https://images.pexels.com/photos/4202466/pexels-photo-4202466.jpeg" alt="">
+        <div class="product-info">
+            <p>$39.99</p> 
+            <p>Bamboo toothbrush kit x4 and organic toothpaste</p>
+            <p>Perfect to save the planet while wash your teeth</p>
+            <button class="primary-button addto-cart-button">
+                <img src="./sources/icons/bt_add_to_cart.svg" alt="add to cart">
+                Add to cart
+            </button>
+        </div>
     </aside>
 
     <section class="main-container">
