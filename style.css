@@ -408,6 +408,9 @@ aside{
     position: absolute;
     right: 0;
 }
+#productDetail{
+    margin-top: -8px;
+}
 .product-detail-close{
     display: flex;
     justify-content: center;

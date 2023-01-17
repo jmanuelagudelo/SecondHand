@@ -1,5 +1,6 @@
 const menuEmail = document.querySelector('.navbar-email');
 const DesktopMenu = document.querySelector('.desktop-menu');
+const productDetailCloseicon = document.querySelector('.product-detail-close');
 //----------mobile-----------
 const MenuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -10,6 +11,7 @@ const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 menuEmail.addEventListener('click', toggleDesktoMenu);
 MenuHamIcon.addEventListener('click', toggleMobileMenu);
 ShoppingCart.addEventListener('click', toggleShopping);
+productDetailCloseicon.addEventListener('click', Closeproductdetail);
 
 /*---- dar click en cualquier lugar cierra todos los menus----- */
 
@@ -19,6 +21,7 @@ mainContainer.addEventListener('click', CloseAllMain);
 /*--------------- Contenedor de productos --------*/
 
 const cardsContainer = document.querySelector('.cards-container');
+const ProductDetailContainer = document.querySelector('#productDetail');
 
 
 function CloseAllMain(){
@@ -52,16 +55,23 @@ function toggleDesktoMenu(){
 
 function toggleMobileMenu(){
     const asideClose = shoppingCartContainer.classList.contains('inactive');
+    const productDetailClose = ProductDetailContainer.classList.contains('inactive');
+
 
     if(!asideClose){
         shoppingCartContainer.classList.add('inactive')
     }
     mobileMenu.classList.toggle('inactive');
+
+    if(!productDetailClose){
+        ProductDetailContainer.classList.add('inactive');
+    }
 }
 
 function toggleShopping(){
     const mobileMenuClose = mobileMenu.classList.contains('inactive');
     const DesktopMenuClose = DesktopMenu.classList.contains('inactive');
+    const productDetailClose = ProductDetailContainer.classList.contains('inactive');
 
     if(!DesktopMenuClose){
         DesktopMenu.classList.add('inactive');
@@ -71,6 +81,10 @@ function toggleShopping(){
         mobileMenu.classList.add('inactive');
     }
     shoppingCartContainer.classList.toggle('inactive');
+
+    if(!productDetailClose){
+        ProductDetailContainer.classList.add('inactive');
+    }
 }
 
 const productList = [];
@@ -134,6 +148,17 @@ productList.push({
     image: "./sources/Images/IMG_2931 Large.jpeg"
 });
 
+function openProductDetail(){
+    productDetail.classList.remove('inactive');
+}
+function Closeproductdetail(){
+    productDetail.classList.add('inactive');
+}
+
+/* ------reto:----- 
+Crear una funcion diferente que maquete el aside de tal forma que tome los elementos del array y los ingrese al ProductDetail
+*/
+
 function renderProducts(arr){
     for(product of arr){
         const productCard = document.createElement('div');
@@ -141,6 +166,7 @@ function renderProducts(arr){
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openProductDetail);
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
@@ -169,3 +195,4 @@ function renderProducts(arr){
     }
 }
 renderProducts(productList);
+
