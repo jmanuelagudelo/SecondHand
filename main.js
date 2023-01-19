@@ -29,6 +29,19 @@ let NameInfo = document.querySelector('.product-info p:nth-child(2)');
 let detailInfo = document.querySelector('.product-info p:nth-child(3)');
 let bottoninfo = document.querySelector('.addto-cart-button');
 
+/*----------shopping-cart----------------*/
+const myordercontent = document.querySelector('.my-order-content');
+const countCart = document.querySelector('.navbar-shopping-cart div');
+const TotalCar = document.querySelector('.total');
+
+const modal = document.querySelector('.modal');
+const closemodal = document.querySelector('.boton-modal');
+
+const productsINcart = [];
+const productsTOcart = [];
+
+countCart.innerText = document.querySelectorAll('.shopping-cart').length;
+TotalCar.innerText = '$0.00';
 
 
 function CloseAllMain(){
@@ -94,68 +107,81 @@ function toggleShopping(){
     }
 }
 
+function CarButton(){
+    AddCar(productsTOcart)
+}
+
+function VerifyProduct(ProductName){
+    return productsINcart.some(function(article){
+        return article === ProductName
+    })
+}
+function noModal(){
+    modal.style.display = 'none'
+}
+// --------- Lista de productos --------- //
 const productList = [];
 productList.push({
     name: 'Hoodie Weed-Green',
     price: 250.00,
     image: "./sources/Images/IMG_2914 Large.jpeg",
-    detail: "Perfect hoodie to the cold weather and the most confortable weed-friendly clothe"
+    detail: "Perfect hoodie to the cold weather and the most confortable"
 });
 
 productList.push({
     name: 'Hoodie classic blue',
     price: 200.00,
     image: "./sources/Images/IMG_2912 Large.jpeg",
-    detail: ""
+    detail: "The classsic one is always the best choose for these cold days "
 });
 
 productList.push({
     name: "Hoodie Yellow stripes",
     price: 180.00,
     image: "./sources/Images/IMG_2916 Large.jpeg",
-    detail: ""
+    detail: "Always confortable and elegant style for each time"
 });
 
 productList.push({
     name: "Bowling stripes shirt",
     price: 100.00,
     image: "./sources/Images/IMG_2918 Large.jpeg",
-    detail: ''
+    detail: 'A classic design will make you look stylish wherever you go'
 });
 
 productList.push({ 
     name: "Japanisse Shirt design",
     price: 120.00,
     image: "./sources/Images/IMG_2921 Large.jpeg",
-    detail: ""
+    detail: "A modern design, you gonna shine wherever you go"
 }); 
 
 productList.push({
     name: "Psychodelic Shirt design",
     price: 120.00,
     image: "./sources/Images/IMG_2923 Large.jpeg",
-    detail: ""
+    detail: "For these days when you feel high"
 });
 
 productList.push({
     name: "Leaves shirt design",
     price: 120.00,
     image: "./sources/Images/IMG_2925 Large.jpeg",
-    detail: ''
+    detail: 'Perfect dor fall, summer and anywhere you decide to'
 });
 
 productList.push({
     name:  "Peachish Diamonds Sweeter",
     price: 150.00,
     image: "./sources/Images/IMG_2929 Large.jpeg",
-    detail: ''
+    detail: 'when you want to feel elegant without losing that highlight style'
 });
 
 productList.push({
     name: "Star wars Sweeter",
     price: 150.00,
     image: "./sources/Images/IMG_2927 Large.jpeg",
-    detail: ''
+    detail: 'may the force be wherever you go'
 });
 
 productList.push({
@@ -174,7 +200,7 @@ function Closeproductdetail(){
 
 
 function renderProducts(arr){
-    for( const product of arr){
+    for(const product of arr){
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
     
@@ -211,14 +237,73 @@ function renderProducts(arr){
             Infoproductos(product.image, product.price, product.name, product.detail)
             openProductDetail()
         });
+
+
+        productImgCart.addEventListener('click', function(){
+            let AddedProduct = []
+            AddedProduct.push({
+                name: product.name,
+                price: product.price,
+                image: product.image
+            })
+            AddCar(AddedProduct)
+        })
+
     }
 }
+//------Carrito de compras dinamico--------//
+function AddCar(products){
+    if(VerifyProduct(products[0].name)){
+        productsTOcart = []
+        return modal.style.display = 'grid'
+    }
+
+    //----maquetacion
+
+    const divshoppingCart = document.createElement('div');
+    const figureShoppingCart = document.createElement('figure');
+    const imgfigureShoppingCart = document.createElement('img');
+    const pnameshoppingCart = document.createElement('p');
+    const ppriceshoppingCart = document.createElement('p');
+    const imgcloseshoppingCart = document.createElement('img');
+
+    divshoppingCart.classList.add('shopping-cart');
+    figureShoppingCart.setAttribute('src', products[0].image);
+    pnameshoppingCart.innerText = products[0].name;
+    ppriceshoppingCart.innerText = '$'  + products[0].price;
+    imgcloseshoppingCart.setAttribute('src', './sources/icons/icon_close.png');
+    imgcloseshoppingCart.classList.add('.navbar-shopping-cart');
+
+    figureShoppingCart.appendChild(imgfigureShoppingCart);
+    divshoppingCart.appendChild(figureShoppingCart);
+    divshoppingCart.append(pnameshoppingCart,ppriceshoppingCart);
+    divshoppingCart.appendChild(imgcloseshoppingCart);
+    myordercontent.appendChild(divshoppingCart);
+
+    countCart.innerText = document.querySelector('.shopping-cart').length;
+    TotalCar.innerText = '$' + (Number(TotalCar.innerText.substring(1)) + Number(products[0].price));
+    productsINcart.push(products[0].name);
+
+    imgcloseshoppingCart.addEventListener('click', function(){
+        divshoppingCart.remove()
+        countCart.innerText = document.querySelectorAll('shopping-cart').length
+        TotalCar.innerText = '$' + (Number(TotalCar.innerText.substring(1)) - Number(products[0].price))
+        productsINcart.splice(productsINcart.indexOf(products[0].name),1)
+    })
+}
+
+//-----informacion aside de los productos-----//
 function Infoproductos(imagen, precio, nombre, detalle){
     productImgDetail.setAttribute('src', imagen)
     PriceInfo.innerText = '$' + precio
     NameInfo.innerText = nombre
     detailInfo.innerText = detalle
-
+    productsTOcart = []
+    productsTOcart.push({
+        name: nombre,
+        price: precio,
+        image: imagen
+    })
 };
 
 renderProducts(productList);
