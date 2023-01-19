@@ -23,6 +23,13 @@ mainContainer.addEventListener('click', CloseAllMain);
 const cardsContainer = document.querySelector('.cards-container');
 const ProductDetailContainer = document.querySelector('#productDetail');
 
+let productImgDetail = document.querySelector('.product-det > img:nth-child(2)');
+let PriceInfo = document.querySelector('.product-info p:nth-child(1)');
+let NameInfo = document.querySelector('.product-info p:nth-child(2)');
+let detailInfo = document.querySelector('.product-info p:nth-child(3)');
+let bottoninfo = document.querySelector('.addto-cart-button');
+
+
 
 function CloseAllMain(){
     const asideClose = shoppingCartContainer.classList.contains('inactive');
@@ -92,60 +99,70 @@ productList.push({
     name: 'Hoodie Weed-Green',
     price: 250.00,
     image: "./sources/Images/IMG_2914 Large.jpeg",
+    detail: "Perfect hoodie to the cold weather and the most confortable weed-friendly clothe"
 });
 
 productList.push({
     name: 'Hoodie classic blue',
     price: 200.00,
-    image: "./sources/Images/IMG_2912 Large.jpeg"
+    image: "./sources/Images/IMG_2912 Large.jpeg",
+    detail: ""
 });
 
 productList.push({
     name: "Hoodie Yellow stripes",
     price: 180.00,
-    image: "./sources/Images/IMG_2916 Large.jpeg"
+    image: "./sources/Images/IMG_2916 Large.jpeg",
+    detail: ""
 });
 
 productList.push({
     name: "Bowling stripes shirt",
     price: 100.00,
-    image: "./sources/Images/IMG_2918 Large.jpeg"
+    image: "./sources/Images/IMG_2918 Large.jpeg",
+    detail: ''
 });
 
-productList.push({
+productList.push({ 
     name: "Japanisse Shirt design",
     price: 120.00,
-    image: "./sources/Images/IMG_2921 Large.jpeg"
-});
+    image: "./sources/Images/IMG_2921 Large.jpeg",
+    detail: ""
+}); 
 
 productList.push({
     name: "Psychodelic Shirt design",
     price: 120.00,
-    image: "./sources/Images/IMG_2923 Large.jpeg"
+    image: "./sources/Images/IMG_2923 Large.jpeg",
+    detail: ""
 });
 
 productList.push({
     name: "Leaves shirt design",
     price: 120.00,
-    image: "./sources/Images/IMG_2925 Large.jpeg"
+    image: "./sources/Images/IMG_2925 Large.jpeg",
+    detail: ''
 });
 
 productList.push({
     name:  "Peachish Diamonds Sweeter",
     price: 150.00,
-    image: "./sources/Images/IMG_2929 Large.jpeg"
+    image: "./sources/Images/IMG_2929 Large.jpeg",
+    detail: ''
 });
 
 productList.push({
     name: "Star wars Sweeter",
     price: 150.00,
-    image: "./sources/Images/IMG_2927 Large.jpeg"
+    image: "./sources/Images/IMG_2927 Large.jpeg",
+    detail: ''
 });
 
 productList.push({
     name: "Blue Diamonds Sweeter",
     price: 150.00,
-    image: "./sources/Images/IMG_2931 Large.jpeg"
+    image: "./sources/Images/IMG_2931 Large.jpeg",
+    detail: 'A confortable sweeter whit a beautiful Blue Diamonds pattern'
 });
 
 function openProductDetail(){
@@ -155,12 +172,9 @@ function Closeproductdetail(){
     productDetail.classList.add('inactive');
 }
 
-/* ------reto:----- 
-Crear una funcion diferente que maquete el aside de tal forma que tome los elementos del array y los ingrese al ProductDetail
-*/
 
 function renderProducts(arr){
-    for(product of arr){
+    for( const product of arr){
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
     
@@ -192,7 +206,22 @@ function renderProducts(arr){
         productCard.append(productImg, productInfo);
     
         cardsContainer.appendChild(productCard);
+
+        productImg.addEventListener('click', function(){
+            Infoproductos(product.image, product.price, product.name, product.detail)
+            openProductDetail()
+        });
     }
 }
+function Infoproductos(imagen, precio, nombre, detalle){
+    productImgDetail.setAttribute('src', imagen)
+    PriceInfo.innerText = '$' + precio
+    NameInfo.innerText = nombre
+    detailInfo.innerText = detalle
+
+};
+
 renderProducts(productList);
+
+
 
