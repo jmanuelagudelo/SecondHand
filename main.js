@@ -20,8 +20,8 @@ mainContainer.addEventListener('click', CloseAllMain);
 
 /*--------------- Contenedor de productos --------*/
 
-const cardsContainer = document.querySelector('.cards-container');
-const ProductDetailContainer = document.querySelector('#productDetail');
+let cardsContainer = document.querySelector('.cards-container');
+let ProductDetailContainer = document.querySelector('#productDetail');
 
 let productImgDetail = document.querySelector('.product-det > img:nth-child(2)');
 let PriceInfo = document.querySelector('.product-info p:nth-child(1)');
@@ -30,18 +30,21 @@ let detailInfo = document.querySelector('.product-info p:nth-child(3)');
 let bottoninfo = document.querySelector('.addto-cart-button');
 
 /*----------shopping-cart----------------*/
-const myordercontent = document.querySelector('.my-order-content');
-const countCart = document.querySelector('.navbar-shopping-cart div');
-const TotalCar = document.querySelector('.total');
+let myordercontent = document.querySelector('.my-order-content');
+let countCart = document.querySelector('.navbar-shopping-cart div');
+let TotalCar = document.querySelector('.total');
 
 const modal = document.querySelector('.modal');
 const closemodal = document.querySelector('.boton-modal');
 
-const productsINcart = [];
-const productsTOcart = [];
+let productsINcart = []
+let productsTOcart = []
 
 countCart.innerText = document.querySelectorAll('.shopping-cart').length;
 TotalCar.innerText = '$0.00';
+
+bottoninfo.addEventListener('click', CarButton);
+
 
 
 function CloseAllMain(){
@@ -108,7 +111,7 @@ function toggleShopping(){
 }
 
 function CarButton(){
-    AddCar(productsTOcart)
+    AddCar(productsTOcart);
 }
 
 function VerifyProduct(ProductName){
@@ -255,38 +258,38 @@ function renderProducts(arr){
 function AddCar(products){
     if(VerifyProduct(products[0].name)){
         productsTOcart = []
-        return modal.style.display = 'grid'
     }
 
     //----maquetacion
 
-    const divshoppingCart = document.createElement('div');
-    const figureShoppingCart = document.createElement('figure');
-    const imgfigureShoppingCart = document.createElement('img');
-    const pnameshoppingCart = document.createElement('p');
-    const ppriceshoppingCart = document.createElement('p');
-    const imgcloseshoppingCart = document.createElement('img');
+    let divshoppingCart = document.createElement('div');
+    let figureShoppingCart = document.createElement('figure');
+    let imgfigureShoppingCart = document.createElement('img');
+    let pnameshoppingCart = document.createElement('p');
+    let ppriceshoppingCart = document.createElement('p');
+    let imgcloseshoppingCart = document.createElement('img');
 
     divshoppingCart.classList.add('shopping-cart');
     figureShoppingCart.setAttribute('src', products[0].image);
     pnameshoppingCart.innerText = products[0].name;
     ppriceshoppingCart.innerText = '$'  + products[0].price;
     imgcloseshoppingCart.setAttribute('src', './sources/icons/icon_close.png');
-    imgcloseshoppingCart.classList.add('.navbar-shopping-cart');
+    imgcloseshoppingCart.classList.add('navbar-shopping-cart');
 
     figureShoppingCart.appendChild(imgfigureShoppingCart);
     divshoppingCart.appendChild(figureShoppingCart);
-    divshoppingCart.append(pnameshoppingCart,ppriceshoppingCart);
+    divshoppingCart.appendChild(pnameshoppingCart);
+    divshoppingCart.appendChild(ppriceshoppingCart);
     divshoppingCart.appendChild(imgcloseshoppingCart);
     myordercontent.appendChild(divshoppingCart);
 
-    countCart.innerText = document.querySelector('.shopping-cart').length;
+    countCart.innerText = document.querySelectorAll('.shopping-cart').length
     TotalCar.innerText = '$' + (Number(TotalCar.innerText.substring(1)) + Number(products[0].price));
     productsINcart.push(products[0].name);
 
     imgcloseshoppingCart.addEventListener('click', function(){
         divshoppingCart.remove()
-        countCart.innerText = document.querySelectorAll('shopping-cart').length
+        countCart.innerText = document.querySelectorAll('.shopping-cart').length
         TotalCar.innerText = '$' + (Number(TotalCar.innerText.substring(1)) - Number(products[0].price))
         productsINcart.splice(productsINcart.indexOf(products[0].name),1)
     })
@@ -304,7 +307,7 @@ function Infoproductos(imagen, precio, nombre, detalle){
         price: precio,
         image: imagen
     })
-};
+}
 
 renderProducts(productList);
 
