@@ -45,6 +45,9 @@ TotalCar.innerText = '$0.00';
 
 bottoninfo.addEventListener('click', CarButton);
 
+let CloseshoppingCar = document.querySelector('.title-container');
+CloseshoppingCar.addEventListener('click', toggleShopping);
+
 
 
 function CloseAllMain(){
@@ -118,9 +121,6 @@ function VerifyProduct(ProductName){
     return productsINcart.some(function(article){
         return article === ProductName
     })
-}
-function noModal(){
-    modal.style.display = 'none'
 }
 // --------- Lista de productos --------- //
 const productList = [];
@@ -270,7 +270,7 @@ function AddCar(products){
     let imgcloseshoppingCart = document.createElement('img');
 
     divshoppingCart.classList.add('shopping-cart');
-    figureShoppingCart.setAttribute('src', products[0].image);
+    imgfigureShoppingCart.setAttribute('src', products[0].image);
     pnameshoppingCart.innerText = products[0].name;
     ppriceshoppingCart.innerText = '$'  + products[0].price;
     imgcloseshoppingCart.setAttribute('src', './sources/icons/icon_close.png');
