@@ -30,6 +30,10 @@
     justify-self: center;
     display: none;
 }
+.pri-logo{
+    width: 250px;
+    justify-self: center;
+}
 
 .tittle{
     font-size: var(--lg);
@@ -47,6 +51,27 @@
     font-weight: 300;
     margin-top: 0;
     margin-bottom: 3.2rem;
+}
+.subtittlep{
+    color: var(--very-light-pink);
+    font-size:  var(--md);
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 3.2rem;
+    text-align: center;
+}
+.goback{
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+.gobackdiv a:hover{
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+
 }
 .email-image{
     width: 132px;

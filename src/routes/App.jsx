@@ -7,7 +7,7 @@ import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import Login from '../containers/Login';
 import RecoveryPassword from "../containers/RecoveryPassword";
-
+import EmailSend from "../containers/EmailSend";
 
 const App = () => {
     return (
@@ -18,6 +18,7 @@ const App = () => {
                     <Route path="/home" element={<Home/>} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/password-recovery" element={<RecoveryPassword />} />
+                    <Route path="/emailsend" element={<EmailSend/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Layout>
