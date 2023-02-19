@@ -1,6 +1,5 @@
 import React from "react";
-import '../styles/MainStyle.scss';
-import '../styles/mobile.css';
+import '../styles/PasswordRecovery.scss';
 import logo from '../logos/logo-second-hand.svg';
 
 

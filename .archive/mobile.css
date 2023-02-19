@@ -64,7 +64,7 @@
     }
     .sign-out {
         font-size: var(--sm);
-        color: var(--hospital-green) !important;
+        color: var(--SHgreen) !important;
     }
 
     /*-----product detail-----*/
@@ -73,4 +73,9 @@
         width: 100%;
     }
 
+    /*Order*/
+
+    .MyOrder {
+		width: 100%;
+	}
 }

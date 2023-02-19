@@ -1,6 +1,5 @@
 import React from "react";
-import '../styles/MainStyle.scss';
-import '../styles/mobile.css';
+import '../styles/Header.scss';
 import logo from '../logos/logo-second-hand.svg'
 import IconMenu from '../icons/icon_menu.svg'
 import ShoppingImg from '../icons/icon_shopping_cart.svg'

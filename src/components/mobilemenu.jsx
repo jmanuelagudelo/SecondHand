@@ -1,10 +1,9 @@
 import React from "react";
-import '../styles/MainStyle.scss';
-import '../styles/mobile.css';
+import '../styles/MobileMenu.scss';
 
-const mobilemenu = () => {
+const Mobilemenu = () => {
     return(
-        <div className="mobile-menu inactive">
+        <div className="mobile-menu">
         <ul>
             <li>
                 <a href="/">CATEGORIES</a>
@@ -43,4 +42,4 @@ const mobilemenu = () => {
     );
 }
 
-export default mobilemenu
+export default Mobilemenu

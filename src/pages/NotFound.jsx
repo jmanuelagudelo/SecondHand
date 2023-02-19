@@ -1,6 +1,5 @@
 import React from "react";
-import '../styles/MainStyle.scss';
-import '../styles/mobile.css'
+import '../styles/NotFound.scss';
 import img404 from '../logos/404Img.png'
 
 
