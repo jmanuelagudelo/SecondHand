@@ -9,7 +9,7 @@ const CreateAccount = () => {
             <form action="/" className="form">
                 <div>
                     <label for="name" className="label">Name</label>
-                    <input type="text" id="name" placeholder="user" className="input input-name" />
+                    <input type="text" id="name" placeholder="name" className="input input-name" />
                     <label for="email" className="label">Email</label>
                     <input type="text" id="email" placeholder="address@example.com" className="input input-email" />
                     <label for="password" className="label">Password</label>

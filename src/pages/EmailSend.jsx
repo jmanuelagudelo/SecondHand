@@ -5,12 +5,12 @@ import emailpic from '../icons/email.svg'
 
 const EmailSend = () => {
     return(
-        <div className="login">
-            <div className="form-container2">
+        <div className="SendEmail">
+            <div className="form-container">
                 <img src={logo} class="logo"/>
 
-                <h1 className="tittle">Email has been sent!</h1>
-                <p className="subtittle">Please check your inbox for instructions on how to reset the password</p>
+                <h1 className="title">Email has been sent!</h1>
+                <p className="subtitle">Please check your inbox for instructions on how to reset the password</p>
 
                 <div className="email-image">
                     <img src={emailpic} alt="email"/>

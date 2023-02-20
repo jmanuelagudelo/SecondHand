@@ -5,12 +5,12 @@ import logo from '../logos/logo-second-hand.svg';
 
 const RecoveryPassword = () => {
     return(
-        <div className  ="login">
-            <div className ="form-container">
+        <div className  ="PasswordRecovery">
+            <div className ="PasswordRecovery-container">
                 <img src={logo} alt="logo" className ="logo"/>
 
                 <h1 className="title">Create a new password</h1>
-				<p className="subtitle">Enter a new passwrd for your account</p>
+				<p className="subtitle">Enter a new password for your account</p>
 
                 <form action="/" className ="form">
                     <label for="password" className="label">New Password</label>
@@ -22,7 +22,7 @@ const RecoveryPassword = () => {
 					<input type="submit" value="Confirm" className="primary-button login-button" />
                 </form>
 
-                <button className ="secundary-button sign-button bot-ton">Sign up</button>
+                <button className ="secondary-button sign-button bot-ton">Sign up</button>
 
             </div>
         </div>

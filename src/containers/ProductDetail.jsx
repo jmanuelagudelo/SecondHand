@@ -1,14 +1,15 @@
 import React from "react";
 import '../styles/ProductDetail.scss';
+import ProductInfo from "../components/ProductInfo";
 import iconclose  from '../icons/icon_close.png';
 
 const ProductDetail = () => {
 	return (
-		<aside id="productDetail" className="inactive mobileDetail product-det">
+		<aside className="ProductDetail">
 			<div className="ProductDetail-close">
 				<img src={iconclose} alt="close" />
 			</div>
-			<ProductInfo />
+			<ProductInfo/>
 		</aside>
 	);
 }

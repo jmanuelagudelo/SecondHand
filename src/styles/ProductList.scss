@@ -1,0 +1,15 @@
+@use './vars';
+
+.ProductList {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, --card-size);
+	gap: 26px;
+	place-content: center;
+	margin-top: 30px;
+}
+
+@media (max-width: 640px) {
+	.ProductList {
+		grid-template-columns: repeat(auto-fill, --cardmo-size);
+	}
+}
