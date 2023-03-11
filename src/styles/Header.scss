@@ -68,6 +68,9 @@ nav{
     justify-content: center;
     align-items: center;
 }
+.navbar-shopping-cart img{
+    cursor: pointer;
+}
 
 @media (max-width: 640px) {
 	.menu{

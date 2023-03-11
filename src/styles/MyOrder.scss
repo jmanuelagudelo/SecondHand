@@ -1,11 +1,27 @@
 @use 'vars';
 
+@keyframes swipeLeft {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 360px;
+	}
+}
+
+
 .MyOrder {
 	width: 360px;
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+	background-color: white;
+	top: 88px;
+	bottom: 0;
+	border-radius: 6px;
+	border: 1px solid var(--SHorange);
+	animation: swipeLeft 0.25s ease;
 }
 .title-container {
 	display: flex;

@@ -1,23 +1,27 @@
 import React, {useState, useContext} from "react";
 import '@styles/Header.scss';
-import DesktopMenu from '@components/Menu';
-import Mobilemenu from '@components/mobilemenu';
 import logo from '@logos/logo-second-hand.svg';
 import IconMenu from '@icons/icon_menu.svg';
 import ShoppingImg from '@icons/icon_shopping_cart.svg';
 
+import DesktopMenu from '@components/Menu';
+import Mobilemenu from '@components/mobilemenu';
+import MyOrder from '../containers/MyOrder';
+import OrderItem from "./OrderItem";
 
 import AppContex from '../context/AppContext';
 
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const [mobilemenu, setMenu] = useState(false);
+    const [toggleOrders, setToggleOrders] = useState(false);
+    
     const {state} = useContext(AppContex);
 
     const handdleToggle = () => {
         setToggle(!toggle);
     }
-    const [mobilemenu, setMenu] = useState(false);
     const handdleMenu = () => {
         setMenu(!mobilemenu);
     }
@@ -49,7 +53,8 @@ const Header = () => {
             <li className="navbar-email" onClick={handdleToggle}>
                 email@example.com
             </li>
-            <li className="navbar-shopping-cart">
+            <li className="navbar-shopping-cart" 
+            onClick={ () =>  setToggleOrders(!toggleOrders)}>
                 <img src={ShoppingImg} alt="shopping-cart"/> 
                 {state.cart.length > 0 ? <div>{state.cart.length}</div> : null }
             </li>
@@ -57,6 +62,7 @@ const Header = () => {
         </div>
         {toggle ? <DesktopMenu/> : null}
         {mobilemenu ? <Mobilemenu/> : null}
+        {toggleOrders ? <MyOrder/> : null}
     </nav>
     );
 }
