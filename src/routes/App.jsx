@@ -21,7 +21,7 @@ const App = () => {
     const initialState = useInitialState();
     return (
         <AppContext.Provider value={initialState}>
-        <BrowserRouter>
+        <BrowserRoute basename="/SecondHand">
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home/>} />
@@ -37,7 +37,7 @@ const App = () => {
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Layout>
-        </BrowserRouter>
+        </BrowserRoute>
         </AppContext.Provider>
     );
 };
