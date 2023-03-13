@@ -7,9 +7,8 @@ import ShoppingImg from '@icons/icon_shopping_cart.svg';
 import DesktopMenu from '@components/Menu';
 import Mobilemenu from '@components/mobilemenu';
 import MyOrder from '../containers/MyOrder';
-import OrderItem from "./OrderItem";
 
-import AppContex from '../context/AppContext';
+import AppContext from '../context/AppContext';
 
 
 const Header = () => {
@@ -17,7 +16,7 @@ const Header = () => {
     const [mobilemenu, setMenu] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
     
-    const {state} = useContext(AppContex);
+    const {state} = useContext(AppContext);
 
     const handdleToggle = () => {
         setToggle(!toggle);
@@ -56,7 +55,7 @@ const Header = () => {
             <li className="navbar-shopping-cart" 
             onClick={ () =>  setToggleOrders(!toggleOrders)}>
                 <img src={ShoppingImg} alt="shopping-cart"/> 
-                {state.cart.length > 0 ? <div>{state.cart.length}</div> : null }
+				{state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
             </li>
         </ul>
         </div>
