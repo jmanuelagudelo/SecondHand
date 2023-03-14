@@ -19,7 +19,7 @@
   "author": "J. manuel Agudelo <juan.manuelillo02@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jmanuelagudelo/yard-sale/issues"
+    "url": "https://github.com/jmanuelagudelo/SecondHand/issues"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
