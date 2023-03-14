@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter ,Route, Routes} from 'react-router-dom';
 import '../styles/global.css';
 
 import Layout from "../containers/Layout";
@@ -21,7 +21,7 @@ const App = () => {
     const initialState = useInitialState();
     return (
         <AppContext.Provider value={initialState}>
-        <BrowserRoute basename="/SecondHand">
+        <BrowserRouter>
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home/>} />
@@ -37,9 +37,9 @@ const App = () => {
                     <Route path="/*" element={<NotFound/>}/>
                 </Routes>
             </Layout>
-        </BrowserRoute>
+        </BrowserRouter>
         </AppContext.Provider>
     );
 };
-  
-  export default App;
+
+export default App;
